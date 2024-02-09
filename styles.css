@@ -45,3 +45,7 @@ Change all children properties within the .container class
     margin: 0;
     padding: 0;
 }
+h3{
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
