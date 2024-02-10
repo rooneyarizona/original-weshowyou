@@ -4,7 +4,9 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist && cp index.html dist && cp index.js dist && cp styles.css dist"
+     
   },
   "keywords": [],
   "author": "Alastair Sagar",
