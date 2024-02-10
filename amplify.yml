@@ -7,7 +7,7 @@ frontend:
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
-        
+        - node index.html
   artifacts:
     baseDirectory: dist
     files:
