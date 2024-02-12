@@ -10,6 +10,11 @@
       "StackName": "amplify-weshowyou-staging-173431",
       "StackId": "arn:aws:cloudformation:us-west-2:815160316767:stack/amplify-weshowyou-staging-173431/7c10ed20-c771-11ee-850a-067c107505f5",
       "AmplifyAppId": "dwqt7nmc5gzrq"
+    },
+    "categories": {
+      "auth": {
+        "weshowyou309ff1ab": {}
+      }
     }
   }
 }
