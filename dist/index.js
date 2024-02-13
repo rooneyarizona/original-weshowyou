@@ -16,8 +16,8 @@ function addRolloverEffect(selector) {
 }
 
 // Create variables for each menu item and add rollover effect
-const menuItems = addRolloverEffect('.search-button');
-const searchItems = addRolloverEffect('.account-button');
+const menuItems = addRolloverEffect('.account-button');
+const searchItems = addRolloverEffect('.search-button');
 const uploadItems = addRolloverEffect('.upload-button');
 
 // Function to navigate to other pages when clicked
