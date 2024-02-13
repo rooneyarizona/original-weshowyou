@@ -1,0 +1,51 @@
+html {
+    background-color: azure;
+}
+#main-title {
+    color: black;
+    font-size: 50px;
+}
+/*
+Set container class styles
+*/
+.container{
+    background-color: rgb(0, 162, 255);
+    padding: 10px;
+    display: flex;
+    gap: 1rem;    
+    flex-direction: row;
+    border: black;
+    justify-content: center;
+}
+/*
+Change all children properties within the .container class
+*/
+.container > * {
+    flex-basis: 100px;
+}
+.main-container{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Adjust the height as needed */
+    margin: 0;
+    padding: 0;
+}
+
+.video {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h3{
+    color: blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
