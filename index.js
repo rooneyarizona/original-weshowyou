@@ -1,68 +1,35 @@
-import express from 'express';
-const app = express();
-const port = 3000;
+// Function to change color on mouseover and mouseout
+function addRolloverEffect(selector) {
+    const items = document.querySelectorAll(selector);
 
-/**app.get("/", (req, res)=>{
-    console.log(req);
-});
-
-app.listen(port, ()=>{
-    console.log(`Server started on port ${port}`);
-});
-
-**/
-//create variables for each menu item
-//change color on rollover
-const menuItems = document.querySelectorAll('.search-button');
-
-        menuItems.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.color = 'blue'; // Change the color on mouseover
-            });
-
-            item.addEventListener('mouseout', () => {
-                item.style.color = ''; // Reset the color on mouseout
-            });
-        });
-const searchItems = document.querySelectorAll('.account-button');
-
-        searchItems.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.color = 'blue'; // Change the color on mouseover
-            });
-
-            item.addEventListener('mouseout', () => {
-                item.style.color = ''; // Reset the color on mouseout
-            });
-        });
-const uploadItems = document.querySelectorAll('.upload-button');
-
-        uploadItems.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.color = 'blue'; // Change the color on mouseover
-            });
-
-            item.addEventListener('mouseout', () => {
-                item.style.color = ''; // Reset the color on mouseout
-            });
+    items.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.color = 'blue'; // Change the color on mouseover
         });
 
-
-        //Navigate to other pages when clicked
-        searchItems.forEach(item => {
-            item.addEventListener('click', () => {
-                window.location.href = 'http://www.google.com';
-            });
+        item.addEventListener('mouseout', () => {
+            item.style.color = ''; // Reset the color on mouseout
         });
-        uploadItems.forEach(item => {
-            item.addEventListener('click', () => {
-                window.location.href = 'http://www.google.com';
+    });
 
-            });
-        });        
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                window.location.href = 'http://www.google.com';
-            });
+    return items;
+}
+
+// Create variables for each menu item and add rollover effect
+const menuItems = addRolloverEffect('.search-button');
+const searchItems = addRolloverEffect('.account-button');
+const uploadItems = addRolloverEffect('.upload-button');
+
+// Function to navigate to other pages when clicked
+function addClickNavigation(items, page) {
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            window.location.href = page;
         });
-        
+    });
+}
+
+// Navigate to other pages when clicked
+addClickNavigation(searchItems, 'search.html');
+addClickNavigation(uploadItems, 'upload.html');
+addClickNavigation(menuItems, 'account.html');
