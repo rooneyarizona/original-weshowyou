@@ -31,5 +31,5 @@ function addClickNavigation(items, page) {
 
 // Navigate to other pages when clicked
 addClickNavigation(searchItems, 'search.html');
-addClickNavigation(uploadItems, '/upload2.html');
+addClickNavigation(uploadItems, 'videosubmit.html');
 addClickNavigation(menuItems, 'account.html');
