@@ -11,45 +11,24 @@
     <h1 id="main-title" align="center"><img src="/main-logo.jpg">  
        <hr>
        <center><h3>Register</h3</center>
-        <form id="contactForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="phone">Phone:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    
-        <script>
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                let formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    message: document.getElementById('message').value
-                };
-                fetch('mailto:sagaralastair@gmail.com', {
-                    method: 'POST',
-                    body: JSON.stringify(formData)
-                }).then(response => {
-                    if (response.ok) {
-                        alert('Message sent successfully!');
-                        document.getElementById('contactForm').reset();
-                    } else {
-                        alert('Failed to send message.');
-                    }
-                }).catch(error => {
-                    alert('An error occurred. Please try again later.');
-                    console.error('Error:', error);
-                });
-            });
-        </script>
-    </body>
-    </html>
+        <h1>Submit Form</h1>
+  <form id="myForm" action="http://www.weshowyou.tv/submit-form" method="POST">
+    <label for="firstName">First Name:</label><br>
+    <input type="text" id="firstName" name="firstName" required><br>
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" id="lastName" name="lastName" required><br>
+    <label for="userName">User Name:</label><br>
+    <input type="text" id="userName" name="userName" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br>
+    <label for="dateOfBirth">Date of Birth:</label><br>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
+    <label for="dateJoined">Date Joined:</label><br>
+    <input type="date" id="dateJoined" name="dateJoined" required><br>
+    <label for="eMailAddress">Email Address:</label><br>
+    <input type="email" id="eMailAddress" name="eMailAddress" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
     
     </p>
 </div>
