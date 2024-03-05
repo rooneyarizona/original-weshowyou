@@ -6,7 +6,6 @@ const config = require('./config');
 const app = express();
 const port = 3000;
 
-// Make credentials secure
 const db = mysql.createConnection({
     host: 'we-show-you.c7ui8yuyev9l.us-west-1.rds.amazonaws.com',
       port: 3306,
@@ -53,11 +52,11 @@ $(document).ready(function(){
 
         $.ajax({
             type: 'POST',
-            url: 'http://www.weshowyou.tv:3000/submit-form',
+            url: 'http://www.weshowyou.tv/submit-form',
             data: formData,
             success: function(response) {
                 alert(response);
-                window.location.href= "success.html";
+                window.location.href= "/success.html";
             },
             error: function(err) {
                 alert("An error has occured!");
