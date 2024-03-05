@@ -1,3 +1,5 @@
+import {addClickNavigation, addRolloverEffect} from "/index.js"
+
 // Configure AWS SDK
 AWS.config.update({
     region: 'US West (N. California) us-west-1', // Replace with your AWS region

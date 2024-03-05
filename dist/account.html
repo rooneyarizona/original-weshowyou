@@ -10,9 +10,10 @@
 <body>
     <h1 id="main-title" align="center"><img src="/main-logo.jpg">  
        <hr>
-       <center><h3>Register</h3</center>
-        <h1>Submit Form</h1>
-  <form id="myForm" action="http://www.weshowyou.tv/submit-form" method="POST">
+    <center><h3>Register</h3</center>
+        <!--Connects to API end point-->
+<form id="myForm" action="/submit-form" method="POST">
+    <!--Fields match Entity Relationship Diagram-->
     <label for="firstName">First Name:</label><br>
     <input type="text" id="firstName" name="firstName" required><br>
     <label for="lastName">Last Name:</label><br>
@@ -23,15 +24,16 @@
     <input type="password" id="password" name="password" required><br>
     <label for="dateOfBirth">Date of Birth:</label><br>
     <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
+    <!--TODO: take out this field and replace with GETDATE() function-->
     <label for="dateJoined">Date Joined:</label><br>
     <input type="date" id="dateJoined" name="dateJoined" required><br>
     <label for="eMailAddress">Email Address:</label><br>
     <input type="email" id="eMailAddress" name="eMailAddress" required><br><br>
     <input type="submit" value="Submit">
-  </form>
-    
+</form>    
     </p>
 </div>
+<!--TODO: Develop form.js with REST API functionality-->
 <script src="/form.js"></script>
 </body>
 </html>
