@@ -1,18 +1,13 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const config = require('./config');
 
 const app = express();
 const port = 3000;
 
-// MySQL Connection
-const db = mysql.createConnection({
-  host: 'we-show-you.c7ui8yuyev9l.us-west-1.rds.amazonaws.com',
-  port: 3306,
-  user: 'rooneyarizona',
-  password: '21Chandler!!!',
-  database: 'weshowyou'
-});
+// Make credentials secure
+const db = mysql.createConnection(config.db);
 
 db.connect((err) => {
   if (err) {
