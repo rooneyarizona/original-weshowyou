@@ -7,7 +7,13 @@ const app = express();
 const port = 3000;
 
 // Make credentials secure
-const db = mysql.createConnection(config.db);
+const db = mysql.createConnection({
+    host: 'we-show-you.c7ui8yuyev9l.us-west-1.rds.amazonaws.com',
+      port: 3306,
+      user: 'rooneyarizona',
+      password: '21Chandler!!!',
+      database: 'weshowyou'
+    });
 
 db.connect((err) => {
   if (err) {
