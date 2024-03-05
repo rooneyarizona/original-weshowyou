@@ -41,7 +41,7 @@ app.listen(port, () => {
 });
 
 $(document).ready(function(){
-    $('#form-test').submit(function(e){
+    $('#myForm').submit(function(e){
         e.preventDefault();
         const formData = $(this).serialize();
 
