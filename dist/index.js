@@ -1,5 +1,10 @@
 alert("Testing: index.js connected")
 
+$(function(){
+    $("#page-header").load("/public/views/header.html");
+}); 
+
+
 // Function to change color on mouseover and mouseout
 function addRolloverEffect(selector) {
     const items = document.querySelectorAll(selector);
