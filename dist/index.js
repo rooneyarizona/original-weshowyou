@@ -1,5 +1,15 @@
 alert("Testing: index.js connected")
 
+import express from "express";
+import bodyParser from "body-parser";
+
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+    res.render("index.ejs");
+  });
+
 // Function to change color on mouseover and mouseout
 function addRolloverEffect(selector) {
     const items = document.querySelectorAll(selector);
