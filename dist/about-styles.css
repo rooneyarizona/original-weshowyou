@@ -1,0 +1,28 @@
+body{
+    background-color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.story{
+    background-color: azure;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    }
+.block-one{
+    background-color: beige;
+    text-align: center;
+}
+.block-two{
+    background-color: beige;
+    text-align: center;
+}
+.container{
+    background-color: rgb(0, 162, 255);
+    padding: 10px;
+    display: flex;
+    gap: 1rem;    
+    flex-direction: row;
+    border: black;
+    justify-content: center;
+}

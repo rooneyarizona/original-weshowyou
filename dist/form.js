@@ -13,7 +13,7 @@ db.connect((err) => {
   if (err) {
     throw err;
   }
-  console.log('Connected to database');
+  console.log(`Connected to database on ${port}`);
 });
 
 // Middleware
