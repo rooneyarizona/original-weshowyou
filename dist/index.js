@@ -1,3 +1,5 @@
+alert("Testing: index.js connected")
+
 // Function to change color on mouseover and mouseout
 function addRolloverEffect(selector) {
     const items = document.querySelectorAll(selector);
