@@ -1,8 +1,7 @@
 import express from 'express';
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const config = require('./config');
-require('dotenv').config();
+import mysql from 'mysql';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
 const app = express();
 const port = 3000;
