@@ -6,6 +6,8 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
+prompt("Enter name");
+
 const db = mysql.createConnection({
     host: process.env.HOST,
       port: process.env.PORT,
