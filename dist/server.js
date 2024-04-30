@@ -1,7 +1,8 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-//require('dotenv').config();
+require('dotenv').config();
+
 
 const app = express();
 const port = 3000;

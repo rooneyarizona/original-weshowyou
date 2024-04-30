@@ -1,8 +1,8 @@
-alert("Testing: index.js connected")
 
-$(function(){
+
+/**$(function(){
     $("#page-header").load("/public/views/header.html");
-}); 
+}); **/
 
 
 // Function to change color on mouseover and mouseout
@@ -21,7 +21,6 @@ function addRolloverEffect(selector) {
 
     return items;
 }
-
 // Create variables for each menu item and add rollover effect
 const menuItems = addRolloverEffect('.account-button');
 const searchItems = addRolloverEffect('.search-button');
@@ -37,9 +36,9 @@ function addClickNavigation(items, page) {
 }
 
 // Navigate to other pages when clicked
-addClickNavigation(searchItems, '/search.html');
-addClickNavigation(uploadItems, '/submitvideo.html');
-addClickNavigation(menuItems, '/account.html');
+addClickNavigation(searchItems, 'search.html');
+addClickNavigation(uploadItems, 'submitvideo.html');
+addClickNavigation(menuItems, 'account.html');
 
 $(function(){
     $("#header").load("/public/views/header.html");
