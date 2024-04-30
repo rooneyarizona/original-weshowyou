@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 alert("Testing: index.js connected")
 
 $(function(){

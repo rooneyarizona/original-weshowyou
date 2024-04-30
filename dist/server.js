@@ -1,13 +1,12 @@
-import express from 'express';
-import { createConnection } from 'mysql';
-import { json, urlencoded } from 'body-parser';
-import config from './config';
+const express = require('express');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const app = express();
 const port = 3000;
 
-const db = createConnection({
+const db = mysql.createConnection({
     host: process.env.HOST,
       port: process.env.PORT,
       user: process.env.USER_NAME,
@@ -23,8 +22,8 @@ db.connect((err) => {
 });
 
 // Middleware
-app.use(json());
-app.use(urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // API Endpoint to handle form submission
 app.post('/submit-form', (req, res) => {
