@@ -28,14 +28,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // API Endpoint to handle form submission
 app.post('/submit-form', (req, res) => {
   console.log('Received POST request to /submit-form');
-
   // Log request body
   console.log('Request body:', req.body);
-
   const { firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress } = req.body;
   const sql = 'INSERT INTO users (firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress) VALUES (?, ?, ?, ?, ?, ?, ?)';
   const values = [firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress];
-
   db.query(sql, values, (err, result) => {
       if (err) {
           console.error('Error inserting data:', err);
@@ -44,6 +41,10 @@ app.post('/submit-form', (req, res) => {
       console.log('Data inserted successfully:', result);
       res.status(200).send('Data inserted successfully');
   });
+});
+
+app.get('/dist/submit-form', (req, res) => {
+  res.send('GET request received');
 });
 
 // Start the server
