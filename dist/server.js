@@ -1,7 +1,9 @@
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-require('dotenv').config();
+import express from 'express';
+import mysql from 'mysql';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,23 +23,27 @@ db.connect((err) => {
     console.log('Connected to database');
 });
 
-// Middleware
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // API Endpoint to handle form submission
 app.post('/submit-form', (req, res) => {
-    const { firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress } = req.body;
-    const sql = 'INSERT INTO users (firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress) VALUES (?, ?, ?, ?, ?, ?, ?)';
-    const values = [firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress];
+  console.log('Received POST request to /submit-form');
 
-    db.query(sql, values, (err, result) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Error inserting data');
-        }
-        res.status(200).send('Data inserted successfully');
-    });
+  // Log request body
+  console.log('Request body:', req.body);
+
+  const { firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress } = req.body;
+  const sql = 'INSERT INTO users (firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress) VALUES (?, ?, ?, ?, ?, ?, ?)';
+  const values = [firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress];
+
+  db.query(sql, values, (err, result) => {
+      if (err) {
+          console.error('Error inserting data:', err);
+          return res.status(500).send('Error inserting data');
+      }
+      console.log('Data inserted successfully:', result);
+      res.status(200).send('Data inserted successfully');
+  });
 });
 
 // Start the server

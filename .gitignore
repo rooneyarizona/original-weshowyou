@@ -21,3 +21,4 @@ amplifytools.xcconfig
 new-app
 #Ignore loadyLoadLoad.env
 loadyLoadLoad.env
+.env

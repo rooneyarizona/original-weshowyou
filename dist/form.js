@@ -1,41 +1,22 @@
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const config = require('./config');
+$(document).ready(function() {
+  $('#myForm').submit(function(e) {
+      e.preventDefault(); // Prevent form submission
 
-const app = express();
-const port = 3000;
+      // Get form data
+      const formData = $(this).serialize();
 
-// Make credentials secure
-const db = mysql.createConnection(config.db);
-
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log(`Connected to database on ${port}`);
-});
-
-// Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// API Endpoint to handle form submission
-app.post('/submit-form', (req, res) => {
-  const { firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress } = req.body;
-  const sql = 'INSERT INTO users (firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress) VALUES (?, ?, ?, ?, ?, ?, ?)';
-  const values = [firstName, lastName, userName, password, dateOfBirth, dateJoined, eMailAddress];
-  
-  db.query(sql, values, (err, result) => {
-    if (err) {
-      res.status(500).send('Error inserting data');
-      throw err;
-    }
-    res.status(200).send('Data inserted successfully');
+      // Send POST request to server
+      $.ajax({
+          type: 'POST',
+          url: '/submit-form', // Endpoint on your server
+          data: formData,
+          success: function(response) {
+              alert(response); // Show success message
+          },
+          error: function(err) {
+              alert("An error has occurred!"); // Show error message
+              console.error(err);
+          }
+      });
   });
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
 });
