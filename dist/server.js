@@ -43,7 +43,7 @@ app.post('/submit-form', (req, res) => {
   });
 });
 
-app.get('/submit-form', (req, res) => {
+app.get('/get-form', (req, res) => {
   res.send('GET request received');
 });
 
