@@ -8,7 +8,7 @@ $(document).ready(function() {
       // Send POST request to server
       $.ajax({
           type: 'POST',
-          url: '/dist/submit-form', // Endpoint on your server
+          url: '/submit-form', // Endpoint on your server
           data: formData,
           success: function(response) {
               alert(response); // Show success message

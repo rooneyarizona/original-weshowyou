@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 const db = mysql.createConnection({
     host: process.env.HOST,
@@ -43,7 +43,7 @@ app.post('/submit-form', (req, res) => {
   });
 });
 
-app.get('/dist/submit-form', (req, res) => {
+app.get('/submit-form', (req, res) => {
   res.send('GET request received');
 });
 
